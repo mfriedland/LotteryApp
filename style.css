@@ -1,0 +1,50 @@
+.divContainer div{
+	float: left;
+}
+
+.guesses div{
+	float: left;
+}
+
+.num {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	text-decoration: underline;
+	border: 1px solid black;
+	margin-right: 10px;
+	background: green;
+	font-size: 20px;
+	color: 'white';
+}
+
+.nums {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: 1px solid black;
+	margin-right: 10px;
+	background: yellow;
+	font-size: 20px;
+	color: 'white';
+}
+
+
+.knapp {
+	height: 50px;
+	width: 100px;
+	bordehttps://www.w3schools.com/cssref/pr_charset_rule.aspr-radius: : 25px;
+	background: red;
+}
+
+body {
+	color: white;
+}

@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> NewLotto </title>
+	 <link rel='stylesheet' type='text/css' href='style.css'>
+     <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+	<style>
+	  body {
+	    padding: 20px;
+	  }
+	  #entrants {
+	    background-color: #CCC;
+	    padding: 2px;
+	  }
+	</style>
+</head>
+
+<body bgcolor='lightblue'>
+	<center> <h1 id='title'> Lottery</h1></center>
+	<center><h2 id='subtitle'> Play the Lottery, and See How Many Numbers You Get Right!!</h2></center>
+
+ 	<div id='main'>
+	  	<div id='input-parent'>
+		    <input id='player-input' class='center' placeholder="#" maxlength='2' autofocus=autofocus></input>
+		     <input id='player-input' class='center' placeholder="#" maxlength='2' autofocus=autofocus></input>
+		      <input id='player-input' class='center' placeholder="#" maxlength='2' autofocus=autofocus></input>
+		       <input id='player-input' class='center' placeholder="#" maxlength='2' autofocus=autofocus></input>
+		        <input id='player-input' class='center' placeholder="#" maxlength='2' autofocus=autofocus></input>
+		         <input id='player-input' class='center' placeholder="#" maxlength='2' autofocus=autofocus></input>
+		    </br>
+		    </br>
+
+		    <button class='btn btn-success' id='submit'>Guess!</button>
+		    <button type='button' class='btn btn-small' id='reset'>Reset</button>
+		</div>
+
+		</br>
+		</br>
+
+		<div id='guess-list' class='divContainer'><font color = "black" ><strong>
+		  <div id="circle6" class="nums"></div>
+		  <div id="circle7" class="nums"></div>
+		  <div id="circle8" class="nums"></div>
+		  <div id="circle9" class="nums"></div>
+		  <div id="circle10" class="nums"></div>
+		  <div id="circle11" class="nums"></div>
+		</strong></font>
+		</div>
+
+		</br>
+		</br>
+		</br>
+		</br>
+		</br>
+		</br>
+		</br>
+
+		<div class='guesses'><font color = "white" ><strong>
+		  <div id="circle0" class="num"></div>
+		  <div id="circle1" class="num"></div>
+		  <div id="circle2" class="num"></div>
+		  <div id="circle3" class="num"></div>
+		  <div id="circle4" class="num"></div>
+		  <div id="circle5" class="num"></div>
+		</strong></font>
+		</div>
+
+		</br>
+		</br>
+
+
+		</br>
+		</br>
+		</br>
+		</br>
+
+		<center>
+			<input id="lottoRoll" class="knapp" type="button" value="Lotto" >
+			<!-- onclick="Game.lottoNumbers();" -->
+		</center>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src='code.js' type='text/javascript'></script>
+
+</body>
+</html>
