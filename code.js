@@ -27,6 +27,14 @@ Game.prototype.checkGuess = function() {
       $('#guess-list div:nth-child('+ this.pastGuesses.length +')').text(this.playersGuess).show(400);
 }
 
+Game.prototype.luckyGuesses = function(){
+  // for (var i=0; i<this.luckyNumbers.length; i++){
+  //     this.pastGuesses.push(this.luckyNumbers[i]);
+    for (var i=0; i<luckyNumbers.length; i++){
+      this.pastGuesses.push(luckyNumbers[i]);
+      // $('#input-parent input:nth-child('+ this.pastGuesses.length +')').text(this.playersGuess).show(400);
+    }
+}
 
 // function generateWinningNumber() {
   // function lottoNumbers() {
@@ -59,44 +67,41 @@ Game.prototype.checkGuess = function() {
 
 Game.prototype.numberCorrect = function() {
   var count = 0 
+      // this.luckyNumbers = [] || this.luckyNumbers.slice(0) 
   // console.log(this.winningNumbers)
   for (var i=0; i<6;i++){
-    console.log(this.pastGuesses)
     for (var j=0; j<this.winningNumbers.length; j++){
-      if (this.pastGuesses[i] === this.winningNumbers[j]) count++
+      if (this.pastGuesses[i] === this.winningNumbers[j]){
+        count++
+        // this.pastGuesses[i]
+      }
     }
   }
-  console.log(count)
   if (count > 3){
-  $('#subtitle').text("YOU GOT " +count+ " NUMBERS CORRECT!")
+  $('#subtitle').text("CONGRATULATIONS, YOU WON. YOU GOT " +count+ " NUMBERS CORRECT!")
   } else {
-  $('#subtitle').text("Yout got " +count+ " numbers correct. Better luck next time.")
+  $('#subtitle').text("You got " +count+ " numbers correct. Better luck next time.")
   }
-
+  // this.pastGuesses = []
+  this.winningNumbers = []
+  count = 0
 }
 
 function makeAGuess(game) {
   $('.center').each(function(index, value){
-    // var guess = $('#player-input').val();
     var guess = $(this).val();
     var output = game.playersGuessSubmission(parseInt(guess,10));
     // $('.center').val("")  ;
   })
-    // is there any way of storing the value and
-    // applying it to every li's with using each function?
-    // $('#guess-list li:nth-child('+ this.pastGuesses.length +')').text(this.playersGuess)
-//     $('li').each(function(index, value) {
-//   $(this).text(guess);
-// })
 }
 
 
 
 // THE GAME!!
 $(document).ready(function() {
-    var game = new Game()
-  
-
+    var game = new Game();
+    // var count = 0;
+    var luckyNumbers;
 
   $('#reset').click(function() {
     game = newGame();
@@ -106,10 +111,22 @@ $(document).ready(function() {
     $('.nums').hide()
     $('.num').show().text('');
     $('.nums').show().text('');
+    $('.center').val("")  ;
   })
 
     $('#submit').click(function() {
+       game.luckyGuesses(game);
        makeAGuess(game);
+    })
+
+    $('#playLuckyNumbers').click(function() {
+      // $('.center').each(function(index, value){
+      for (var i=0; i<luckyNumbers.length; i++){
+        game.pastGuesses.push(luckyNumbers[i]);
+        $('#guess-list div:nth-child('+ game.pastGuesses.length +')').text(luckyNumbers[i]).show(400);
+        $('#input-parent input:nth-child('+ game.pastGuesses.length +')').val(luckyNumbers[i]).show(400);
+      }
+      makeAGuess(game);
     })
 
     $('#player-input').keypress(function(event) {
@@ -119,16 +136,25 @@ $(document).ready(function() {
     })
 
     $('#lottoRoll').click(function() {
-       game.lottoNumbers(game);
-       game.numberCorrect();
+       // count = 0;
+        $('.num').hide().show().text('');
+      game.lottoNumbers(game);
+      game.numberCorrect();
+    })
+
+    $('#reset').click(function() {
+    game = newGame();
+    $('#title').text('Play Again!');
+    })
+
+    $('#luckyNumbers').click(function() {
+    // game.luckyNumbers = game.pastGuesses.slice(0)
+    luckyNumbers = game.pastGuesses.slice(0)
     })
 
 })
 
-$('#reset').click(function() {
-    game = newGame();
-    $('#title').text('Play Again!');
-})
+
 
 
     // $('#title').text(output)
