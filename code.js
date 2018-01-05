@@ -33,7 +33,7 @@ Game.prototype.checkGuess = function() {
   Game.prototype.lottoNumbers = function () {
     // var numbersList = [];
       for (var i=0;i<6; i++){
-        var temp = Math.floor(Math.random()*10)+1;
+        var temp = Math.floor(Math.random()*30)+1;
         if (this.winningNumbers.indexOf(temp) === -1) {
           this.winningNumbers.push(temp)
           document.getElementById("circle"+i).innerHTML = this.winningNumbers[i];
@@ -79,8 +79,8 @@ function makeAGuess(game) {
   $('.center').each(function(index, value){
     // var guess = $('#player-input').val();
     var guess = $(this).val();
-    $('#player-input').val("")  ;
     var output = game.playersGuessSubmission(parseInt(guess,10));
+    // $('.center').val("")  ;
   })
     // is there any way of storing the value and
     // applying it to every li's with using each function?
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 
   $('#reset').click(function() {
-    var game = newGame();
+    game = newGame();
     $('body')
     $('#title').text('Play Again!').hide().show()
     $('.num').hide()

@@ -1,9 +1,24 @@
 .divContainer div{
-	float: left;
+    display: inline;
+    font-size: 30px;
+    border: 1px solid black; 
+    padding: 25px 45px;
+    border-radius: 60%;
+    width: 160px;
+    height: 160px;
+    background-color: white;
+	text-align: center;
 }
 
-.guesses div{
-	float: left;
+.guesses div {
+    display: inline;
+    font-size: 30px;
+    border: 1px solid black; 
+    padding: 25px 45px;
+   	border-radius: 60%;
+    width: 160px;
+    height: 200px;
+    background-color: green;
 }
 
 .num {
@@ -46,5 +61,7 @@
 }
 
 body {
-	color: white;
+    background-image: url('background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
